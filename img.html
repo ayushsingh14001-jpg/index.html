@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrom Board</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #222;
+        }
+
+        /* Carrom Board */
+        .board {
+            width: 420px;
+            height: 420px;
+            background: #d49a55;
+            border: 18px solid #5a2d16;
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 10px 25px black;
+        }
+
+        /* Inner playing area */
+        .inner {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            right: 25px;
+            bottom: 25px;
+            border: 4px solid #8b4513;
+        }
+
+        /* Pockets */
+        .pocket {
+            width: 35px;
+            height: 35px;
+            background: #111;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .p1 {
+            top: -18px;
+            left: -18px;
+        }
+
+        .p2 {
+            top: -18px;
+            right: -18px;
+        }
+
+        .p3 {
+            bottom: -18px;
+            left: -18px;
+        }
+
+        .p4 {
+            bottom: -18px;
+            right: -18px;
+        }
+
+        /* Center Circle */
+        .center {
+            width: 100px;
+            height: 100px;
+            border: 3px solid #8b4513;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .center::after {
+            content: "";
+            width: 25px;
+            height: 25px;
+            background: #d22;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Coins */
+        .coin {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            position: absolute;
+            border: 2px solid #333;
+        }
+
+        .black {
+            background: #111;
+        }
+
+        .white {
+            background: white;
+        }
+
+        .queen {
+            background: red;
+        }
+
+        /* Coin positions */
+        .c1 { top: 160px; left: 180px; }
+        .c2 { top: 145px; left: 150px; }
+        .c3 { top: 145px; left: 210px; }
+        .c4 { top: 175px; left: 150px; }
+        .c5 { top: 175px; left: 210px; }
+        .c6 { top: 130px; left: 180px; }
+
+        /* Striker */
+        .striker {
+            width: 35px;
+            height: 35px;
+            background: white;
+            border: 4px solid #333;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Bottom line */
+        .line {
+            width: 180px;
+            height: 3px;
+            background: #8b4513;
+            position: absolute;
+            bottom: 65px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="board">
+
+        <div class="inner">
+
+            <!-- Pockets -->
+            <div class="pocket p1"></div>
+            <div class="pocket p2"></div>
+            <div class="pocket p3"></div>
+            <div class="pocket p4"></div>
+
+            <!-- Center -->
+            <div class="center"></div>
+
+            <!-- Coins -->
+            <div class="coin black c1"></div>
+            <div class="coin white c2"></div>
+            <div class="coin black c3"></div>
+            <div class="coin white c4"></div>
+            <div class="coin black c5"></div>
+            <div class="coin queen c6"></div>
+
+            <!-- Striker Line -->
+            <div class="line"></div>
+
+            <!-- Striker -->
+            <div class="striker"></div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
